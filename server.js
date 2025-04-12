@@ -17,6 +17,10 @@ app.use('/api/url', urlRoutes);
 
 app.use('/api/auth', authRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend URL Shortener API is running! 🎉");
+});
+
 // Public redirect route (for short links)
 app.get('/:alias', async (req, res) => {
     try {
