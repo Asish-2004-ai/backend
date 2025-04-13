@@ -1,5 +1,5 @@
 // backend/db.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const MONGODB_URI = "mongodb://127.0.0.1:27017/urlshortener";
 
@@ -31,4 +31,4 @@ async function connectToDatabase() {
   return cached.conn;
 }
 
-export default connectToDatabase;
+module.exports = connectToDatabase;
