@@ -1,6 +1,7 @@
-const express = require("express");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+import express from "express";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+
 const router = express.Router();
 
 // Hardcoded user
@@ -29,4 +30,4 @@ router.post("/login", async (req, res) => {
   res.json({ token });
 });
 
-module.exports = router;
+export default router;

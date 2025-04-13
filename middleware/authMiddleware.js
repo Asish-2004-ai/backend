@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
 const verifyJWT = (req, res, next) => {
   const token = req.headers["authorization"];
@@ -12,4 +12,4 @@ const verifyJWT = (req, res, next) => {
   });
 };
 
-module.exports = verifyJWT;
+export default verifyJWT;

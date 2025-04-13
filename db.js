@@ -1,9 +1,8 @@
-// backend/db.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const MONGODB_URI = "mongodb://127.0.0.1:27017/urlshortener";
 
-if (!'mongodb://127.0.0.1:27017/urlshortener') {
+if (!MONGODB_URI) {
   throw new Error('⚠️ Please define the MONGO_URL environment variable');
 }
 
@@ -19,7 +18,7 @@ async function connectToDatabase() {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect('mongodb://127.0.0.1:27017/urlshortener', {
+    cached.promise = mongoose.connect(MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }).then((mongoose) => {
@@ -31,4 +30,4 @@ async function connectToDatabase() {
   return cached.conn;
 }
 
-module.exports = connectToDatabase;
+export default connectToDatabase;

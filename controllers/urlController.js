@@ -1,8 +1,8 @@
-const shortid = require('shortid');
-const Url = require('../models/Url'); // Your URL model for saving to MongoDB
+import shortid from 'shortid';
+import Url from '../models/Url.js'; // Your URL model for saving to MongoDB
 
 // Create a shortened URL
-exports.createShortUrl = async (req, res) => {
+export const createShortUrl = async (req, res) => {
   try {
     const { originalUrl, customAlias, expirationDate, userId } = req.body;
 

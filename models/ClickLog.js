@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const clickLogSchema = new mongoose.Schema({
   alias: {
@@ -19,4 +19,5 @@ const clickLogSchema = new mongoose.Schema({
 
 const ClickLog = mongoose.model('ClickLog', clickLogSchema);
 
-module.exports = ClickLog;
+
+export default ClickLog;

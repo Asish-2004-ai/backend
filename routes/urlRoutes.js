@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { createShortUrl } from '../controllers/urlController.js';
+
 const router = express.Router();
-const { createShortUrl } = require('../controllers/urlController');
 
 // POST /api/url/shorten
 router.post('/shorten', createShortUrl);
 
-module.exports = router;
+export default router;
