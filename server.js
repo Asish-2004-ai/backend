@@ -6,6 +6,7 @@ const urlRoutes = require('./routes/urlRoutes');
 const Url = require('./models/Url');
 const authRoutes = require('./routes/authRoutes');
 const ClickLog = require('./models/ClickLog');
+const connectToDatabase = require('./db.js');
 
 dotenv.config();
 const app = express();
